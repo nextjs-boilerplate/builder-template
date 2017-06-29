@@ -1,22 +1,12 @@
-import Cookies from 'js-cookie'
-
-import Layout from '../components/MyLayout.js'
-import fetch from '../tools/fetch'
-import apiUrls from '../tools/api-urls'
+import {fetchJSON} from '../tools/fetch'
+import Detail from '../components/templates/Detail.js'
 
 const About = (props) => (
-    <div>
-       <p>This is the about page</p>
-       <p>props: {JSON.stringify(props)}</p>
-    </div>
+    <Detail />
 )
 
-About.getInitialProps = ({req,res})=>{
-    return fetch(apiUrls('/api/auth',req), {}, req, res)
-    .then(r=>r.json())
-    .then((user)=>{
-        return {about:{user, cookieDate: Cookies.get('date')}}
-    })
+About.getInitialProps = async ({ req, res }) => {
+  return await fetchJSON('/static/pages/about.json', {}, req, res)
 }
 
-export default Layout(About)
+export default About

@@ -1,0 +1,17 @@
+input[type=text], input[type=search], input[type=url], input[type=number], textarea {
+    -webkit-appearance: none;
+}
+
+label {
+    display: block;
+    padding-bottom: 0.2rem;
+    font-weight: bold;
+}
+
+input, textarea {
+    width: 100%;
+    border: 1px solid #a5a5a5;
+    border-radius: 6px;
+    padding: 1rem;
+}
+

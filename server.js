@@ -5,7 +5,6 @@ const path = require('path')
 const fs = require('fs')
 const bodyParser = require('body-parser')
 const cookieParser = require('cookie-parser')
-const apiRoute = require('./tools/api-route')
 
 const dev = process.env.NODE_ENV !== 'production'
 const app = next({ dev })
@@ -27,9 +26,6 @@ app.prepare()
   server.use(bodyParser.json())
   server.use(cookieParser())
 
-  //api
-  server.use('/api',apiRoute)
-
   //next routes
   server.use(handle)
 
@@ -37,16 +33,6 @@ app.prepare()
   server.listen(80, (err) => {
     if (err) throw err
     console.log('> Ready http on http://localhost')
-  })
-
-  //http2
-  spdy.createServer({
-      key: fs.readFileSync(__dirname + '/server.key'),
-      cert:  fs.readFileSync(__dirname + '/server.crt')
-  }, server)
-  .listen(433, (err) => {
-    if (err) throw err
-    console.log('> Ready http2 on https://localhost')
   })
 })
 .catch((ex) => {

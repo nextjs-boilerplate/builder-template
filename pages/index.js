@@ -1,31 +1,13 @@
+import {fetchJSON} from '../tools/fetch'
+import Dashboard from '../components/templates/Dashboard.js'
 
-import { translate } from 'react-i18next';
-import Layout from '../components/MyLayout.js'
-import {Link} from '../tools/routes'
-import i18nHelper from '../tools/i18n-helper'
 
-const translateNS = 'index'
+const Index = (props) => (
+  <Dashboard {...props} />
+)
 
-const Index = (props) => {  
-  const {t} = props
-  return (<div>
-    <h1>{t('My Blog')}</h1>
-    <p>
-      <Link route='posts'>
-        <a>{t('See my posts')} >></a>
-      </Link>
-    </p>
-    <p>
-      <Link route='post'  params={{title: 'Hello Next.js'}} >
-        <a>{t('See my first post')} >></a>
-      </Link>
-    </p>
-    
-  </div>
-)}
-
-Index.getInitialProps = function() {
-  return Promise.resolve({translateNS:[translateNS]})
+Index.getInitialProps = async ({ req, res }) => {
+  return await fetchJSON('/static/pages/index.json', {}, req, res)
 }
 
-export default Layout(translate(['index'])(Index))
+export default Index

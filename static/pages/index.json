@@ -1,0 +1,67 @@
+{
+  "hello":"world",
+  "primaryNav": [
+    {
+      "url": "/",
+      "label": "Home"
+    },
+    {
+      "url": "/about",
+      "label": "About"
+    }
+  ],
+  "alert":{
+    "styleModifier": "success",
+    "alertText": "This is a success alert"
+  },
+  
+  "sectionBlock": {
+    "blockFeature": {
+      "styleModifier": "featured",
+      "progress": {
+        "max": 50,
+        "progressValue": 23,
+        "label":"About"
+      },
+      "number":23,    
+      "shotHeadline":"Lorem ipsum dolor sit (37 characters)"
+    },
+    "tileList": [
+      {
+        "styleModifier": "",
+        "progress": {
+          "max": 50,
+          "progressValue": 23,
+          "label":"About"
+        },
+        "number":23,    
+        "shotHeadline":"Lorem ipsum dolor sit (37 characters)"
+      },{
+        "progress": {
+          "max": 50,
+          "progressValue": 23,
+          "label":"About"
+        },
+        "number":23,    
+        "shotHeadline":"Lorem ipsum dolor sit (37 characters)"
+      },{
+        "styleModifier": "",
+        "progress": {
+          "max": 50,
+          "progressValue": 23,
+          "label":"About"
+        },
+        "number":23,    
+        "shotHeadline":"Lorem ipsum dolor sit (37 characters)"
+      },{
+        "progress": {
+          "max": 50,
+          "progressValue": 23,
+          "label":"About"
+        },
+        "number":23,    
+        "shotHeadline":"Lorem ipsum dolor sit (37 characters)"
+      }
+    ]
+  }  
+}

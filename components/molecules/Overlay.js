@@ -1,0 +1,1 @@
+export default (props)=>(<h1>hello, {props.hello}</h1>)
